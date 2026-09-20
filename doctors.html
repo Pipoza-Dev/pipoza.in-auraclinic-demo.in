@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="aqua">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Doctors & Specialists | AuraCare Clinic Demo</title>
+  <meta name="description" content="Find and book appointments with board-certified physicians and specialists at AuraCare Health Clinic.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome 6 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Demo Bar -->
+  <div class="demo-top-bar">
+    <span>✨ <strong>DEMO PREVIEW:</strong> Crafted by <span class="studio-tag">Pipiza Dev Studio</span></span>
+    <span>• Physician Profiles & Schedules (Simulation Only).</span>
+    <a href="#" class="demo-info-trigger trigger-demo-modal"><i class="fa-solid fa-circle-info"></i> About Demo</a>
+    <a href="https://pipoza.s.gy/pipoza.in" class="back-to-studio-btn" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-left"></i> Return to Pipiza.in</a>
+  </div>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="brand-logo">
+          <div class="brand-icon"><i class="fa-solid fa-staff-snake"></i></div>
+          <div class="brand-info">
+            <span class="brand-title">AuraCare <span class="badge badge-demo">DEMO</span></span>
+            <span class="brand-subtitle">Health & Wellness Clinic</span>
+          </div>
+        </a>
+
+        <nav>
+          <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="doctors.html" class="nav-link active">Doctors</a></li>
+            <li><a href="services.html" class="nav-link">Services</a></li>
+            <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+            <li><a href="about.html" class="nav-link">About & Studio</a></li>
+            <li><a href="feedback.html" class="nav-link">Feedback</a></li>
+            <li><a href="report.html" class="nav-link">Report Bug</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <div class="theme-switcher-wrapper">
+            <button type="button" class="theme-btn" id="themeBtn" title="Choose Theme Palette">
+              <span class="theme-dot-current" id="currentThemeDot"></span>
+              <i class="fa-solid fa-palette"></i>
+              <span>Themes</span>
+            </button>
+            <div class="theme-menu" id="themeMenu"></div>
+          </div>
+
+          <a href="appointment.html" class="btn btn-primary">
+            <i class="fa-regular fa-calendar-check"></i>
+            <span>Book Appointment</span>
+          </a>
+
+          <button type="button" class="mobile-toggle" id="mobileMenuToggle">
+            <i class="fa-solid fa-bars-staggered"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Navigation -->
+  <div class="mobile-drawer-overlay" id="drawerOverlay"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo">
+        <div class="brand-icon" style="width:36px; height:36px; font-size:1.1rem;"><i class="fa-solid fa-staff-snake"></i></div>
+        <span class="brand-title" style="font-size:1.15rem;">AuraCare <span class="badge badge-demo">DEMO</span></span>
+      </div>
+      <button type="button" class="mobile-close-btn" id="mobileCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <!-- Return to Actual Website Link -->
+    <a href="https://pipoza.s.gy/pipoza.in" class="mobile-studio-back-banner" target="_blank" rel="noopener noreferrer">
+      <span><i class="fa-solid fa-arrow-left"></i> Return to Pipiza.in</span>
+      <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.75rem;"></i>
+    </a>
+
+    <ul class="mobile-nav-links">
+      <li><a href="index.html"><i class="fa-solid fa-house"></i> <span>Home</span></a></li>
+      <li><a href="doctors.html" class="active"><i class="fa-solid fa-user-doctor"></i> <span>Our Doctors</span></a></li>
+      <li><a href="services.html"><i class="fa-solid fa-heart-pulse"></i> <span>Treatments & Services</span></a></li>
+      <li><a href="reviews.html"><i class="fa-solid fa-star"></i> <span>Patient Reviews</span></a></li>
+      <li><a href="about.html"><i class="fa-solid fa-hospital"></i> <span>About & Pipiza Studio</span></a></li>
+      <li><a href="feedback.html"><i class="fa-solid fa-comment-dots"></i> <span>Patient Feedback</span></a></li>
+      <li><a href="report.html"><i class="fa-solid fa-bug"></i> <span>Report Website Issue</span></a></li>
+      <li><a href="appointment.html"><i class="fa-regular fa-calendar-check"></i> <span>Book Appointment</span></a></li>
+    </ul>
+
+    <div style="margin-bottom: 1.5rem;">
+      <a href="appointment.html" class="btn btn-primary btn-block">
+        <i class="fa-solid fa-calendar-plus"></i> Quick Book (Demo)
+      </a>
+    </div>
+
+    <div class="mobile-theme-selector">
+      <h4>Select Theme Color</h4>
+      <div class="mobile-theme-chips" id="mobileThemeChips"></div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="section-padding">
+    <div class="container">
+      <!-- Section Header -->
+      <div class="section-header">
+        <span class="sub-title">Medical Directory</span>
+        <h1 class="main-title">Our Certified Specialists</h1>
+        <p class="description">
+          Browse our team of board-certified clinicians, surgeons, and specialists. Filter by medical department or search by physician name.
+        </p>
+      </div>
+
+      <!-- Search and Filter Controls -->
+      <div class="form-card" style="padding: 1.5rem 2rem; margin-bottom: 2.5rem;">
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between;">
+          <!-- Search Input -->
+          <div style="flex: 1; min-width: 260px; position: relative;">
+            <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-light);"></i>
+            <input 
+              type="text" 
+              id="doctorSearchInput" 
+              class="form-control" 
+              placeholder="Search by physician name or keyword..."
+              style="padding-left: 2.6rem;"
+            >
+          </div>
+
+          <!-- Sort Select -->
+          <div style="min-width: 200px;">
+            <select id="doctorSortSelect" class="form-control">
+              <option value="rating">Highest Rated</option>
+              <option value="experience">Most Experienced</option>
+              <option value="name">Alphabetical (A - Z)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Specialty Filter Pills -->
+        <div style="margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 0.5rem;" id="specialtyFilterPills">
+          <button type="button" class="slot-pill active" data-dept="all">All Specialties</button>
+          <button type="button" class="slot-pill" data-dept="Cardiology">Cardiology</button>
+          <button type="button" class="slot-pill" data-dept="Neurology">Neurology</button>
+          <button type="button" class="slot-pill" data-dept="Pediatrics">Pediatrics</button>
+          <button type="button" class="slot-pill" data-dept="Orthopedics">Orthopedics</button>
+          <button type="button" class="slot-pill" data-dept="Dermatology">Dermatology</button>
+          <button type="button" class="slot-pill" data-dept="Dentistry">Dentistry</button>
+          <button type="button" class="slot-pill" data-dept="General Medicine">General Medicine</button>
+          <button type="button" class="slot-pill" data-dept="Ophthalmology">Ophthalmology</button>
+        </div>
+      </div>
+
+      <!-- Results Count Status -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+        <p style="font-weight: 600; color: var(--text-muted); font-size: 0.95rem;">
+          Showing <span id="doctorResultsCount" style="color: var(--primary); font-weight: 800;">8</span> Specialists
+        </p>
+        <span class="badge badge-demo"><i class="fa-solid fa-circle-exclamation"></i> Demo Directory Only</span>
+      </div>
+
+      <!-- Doctor Cards Grid -->
+      <div class="grid-4" id="doctorsFullGrid">
+        <!-- Rendered by JavaScript -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Doctor Bio Detail Modal -->
+  <div class="modal-overlay" id="doctorBioModal">
+    <div class="modal-content" style="max-width: 600px;">
+      <button type="button" class="modal-close-btn" id="closeDoctorBioModal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      
+      <div style="display: flex; gap: 1.5rem; align-items: center; margin-bottom: 1.5rem;" id="bioHeader">
+        <!-- Rendered by script -->
+      </div>
+
+      <div style="margin-bottom: 1.5rem;">
+        <h4 style="font-size: 0.95rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.5rem; letter-spacing: 0.05em;">Professional Biography</h4>
+        <p id="bioText" style="font-size: 0.95rem; line-height: 1.7;"></p>
+      </div>
+
+      <div style="background: var(--bg-surface-alt); padding: 1.25rem; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+        <div style="display: flex; justify-content: space-between; font-size: 0.88rem; margin-bottom: 0.5rem;">
+          <span style="color: var(--text-muted);">Clinic Consultation Hours:</span>
+          <strong id="bioSchedule" style="color: var(--text-main);"></strong>
+        </div>
+        <div style="display: flex; justify-content: space-between; font-size: 0.88rem;">
+          <span style="color: var(--text-muted);">Languages Spoken:</span>
+          <strong id="bioLanguages" style="color: var(--text-main);"></strong>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 1rem;">
+        <a id="bioBookLink" href="#" class="btn btn-primary btn-block">
+          <i class="fa-regular fa-calendar-check"></i> Book Consultation (Demo)
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Demo Pill -->
+  <div class="floating-demo-pill trigger-demo-modal">
+    <div class="pulse-dot"></div>
+    <span>Pipiza Dev Demo</span>
+    <span class="badge badge-demo">SIMULATION</span>
+  </div>
+
+  <!-- Global Demo Info Modal -->
+  <div class="modal-overlay" id="demoModalOverlay">
+    <div class="modal-content">
+      <button type="button" class="modal-close-btn" id="closeDemoModal"><i class="fa-solid fa-xmark"></i></button>
+      <div style="text-align: center; margin-bottom: 1.5rem;">
+        <div style="width: 60px; height: 60px; border-radius: 50%; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 1rem;">
+          <i class="fa-solid fa-laptop-code"></i>
+        </div>
+        <h3 style="font-size: 1.45rem; margin-bottom: 0.35rem;">Pipiza Dev Studio Demo Notice</h3>
+        <span class="badge badge-demo">NON-OPERATIONAL SHOWCASE</span>
+      </div>
+      <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.25rem;">
+        This page demonstrates a high-performance, filterable doctor catalog built with modular client-side logic.
+      </p>
+      <div class="simulation-notice-box" style="margin-bottom: 1.25rem;">
+        <h4><i class="fa-solid fa-triangle-exclamation"></i> Notice:</h4>
+        <p>Doctor photos and credentials are mock data used exclusively to demonstrate responsive layout design and UI state handling.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 0.65rem;">
+        <a href="https://pipoza.s.gy/pipoza.in" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block" style="background: linear-gradient(135deg, #38bdf8, #818cf8); color: #0f172a;">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Official Website (pipoza.in)
+        </a>
+        <button type="button" class="btn btn-outline btn-block" onclick="document.getElementById('closeDemoModal').click();">
+          Continue Exploring
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="margin-bottom: 1rem;">
+            <div class="brand-icon"><i class="fa-solid fa-staff-snake"></i></div>
+            <div class="brand-info">
+              <span class="brand-title">AuraCare <span class="badge badge-demo">DEMO</span></span>
+              <span class="brand-subtitle">Health & Wellness Clinic</span>
+            </div>
+          </a>
+          <p>Demonstrating premier web architecture, light visual design, and fluid medical user journeys.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Pages</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+            <li><a href="doctors.html"><i class="fa-solid fa-chevron-right"></i> Find Doctors</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right"></i> Medical Services</a></li>
+            <li><a href="reviews.html"><i class="fa-solid fa-chevron-right"></i> Patient Reviews</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Simulations</h4>
+          <ul class="footer-links">
+            <li><a href="appointment.html"><i class="fa-solid fa-chevron-right"></i> Book Appointment</a></li>
+            <li><a href="feedback.html"><i class="fa-solid fa-chevron-right"></i> Patient Feedback</a></li>
+            <li><a href="report.html"><i class="fa-solid fa-chevron-right"></i> Report a Bug</a></li>
+            <li><a href="success.html?type=demo"><i class="fa-solid fa-chevron-right"></i> Sample Success Page</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Simulated Newsletter</h4>
+          <p style="font-size: 0.88rem; margin-bottom: 1rem;">Get monthly health guidance directly from clinic staff.</p>
+          <form class="newsletter-form" style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <input type="email" placeholder="Enter your email" required class="form-control" style="font-size: 0.9rem;">
+            <button type="submit" class="btn btn-primary btn-sm"><i class="fa-regular fa-paper-plane"></i> Subscribe (Demo)</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 AuraCare Clinic. Built with precision by <a href="https://pipoza.s.gy/pipoza.in" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight:700;">Pipiza Dev Studio <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.75rem;"></i></a>.</div>
+        <div class="footer-demo-notice"><i class="fa-solid fa-shield-cat"></i> Demo template only.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('doctorsFullGrid');
+      const searchInput = document.getElementById('doctorSearchInput');
+      const sortSelect = document.getElementById('doctorSortSelect');
+      const pills = document.querySelectorAll('#specialtyFilterPills .slot-pill');
+      const countEl = document.getElementById('doctorResultsCount');
+      
+      let currentDept = 'all';
+      let currentQuery = '';
+
+      // Check URL query parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const paramDept = urlParams.get('specialty');
+      const paramQuery = urlParams.get('query');
+
+      if (paramDept) {
+        currentDept = paramDept;
+        pills.forEach(p => {
+          if (p.getAttribute('data-dept').toLowerCase() === paramDept.toLowerCase()) {
+            pills.forEach(x => x.classList.remove('active'));
+            p.classList.add('active');
+          }
+        });
+      }
+
+      if (paramQuery) {
+        currentQuery = paramQuery;
+        searchInput.value = paramQuery;
+      }
+
+      function filterAndRender() {
+        let list = [...CLINIC_DATA.doctors];
+
+        // Specialty filter
+        if (currentDept !== 'all') {
+          list = list.filter(d => d.specialty.toLowerCase().includes(currentDept.toLowerCase()));
+        }
+
+        // Keyword filter
+        if (currentQuery.trim() !== '') {
+          const q = currentQuery.toLowerCase();
+          list = list.filter(d => 
+            d.name.toLowerCase().includes(q) || 
+            d.specialty.toLowerCase().includes(q) || 
+            d.degrees.toLowerCase().includes(q) ||
+            d.bio.toLowerCase().includes(q)
+          );
+        }
+
+        // Sort
+        const sortVal = sortSelect.value;
+        if (sortVal === 'rating') {
+          list.sort((a, b) => b.rating - a.rating);
+        } else if (sortVal === 'experience') {
+          list.sort((a, b) => parseInt(b.experience) - parseInt(a.experience));
+        } else if (sortVal === 'name') {
+          list.sort((a, b) => a.name.localeCompare(b.name));
+        }
+
+        countEl.textContent = list.length;
+
+        if (list.length === 0) {
+          container.innerHTML = `
+            <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 1rem;">
+              <i class="fa-solid fa-user-doctor" style="font-size: 3rem; color: var(--text-light); margin-bottom: 1rem;"></i>
+              <h3>No Specialists Found</h3>
+              <p>Try searching for a different name, specialty, or clear your filters.</p>
+              <button type="button" class="btn btn-outline btn-sm" style="margin-top: 1rem;" onclick="resetFilters()">
+                Reset All Filters
+              </button>
+            </div>
+          `;
+          return;
+        }
+
+        container.innerHTML = list.map(d => `
+          <div class="doctor-card">
+            <div class="doctor-img-wrapper">
+              <img src="${d.image}" alt="${d.name}" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=600';">
+              <div class="doctor-status-badge">
+                <span class="status-indicator"></span>
+                <span>${d.status}</span>
+              </div>
+            </div>
+            <div class="doctor-info">
+              <span class="doctor-specialty">${d.specialty}</span>
+              <h3 class="doctor-name">${d.name}</h3>
+              <p class="doctor-degrees">${d.degrees}</p>
+              <div class="doctor-meta">
+                <div class="doctor-rating">
+                  <i class="fa-solid fa-star"></i>
+                  <span>${d.rating}</span>
+                  <small style="color: var(--text-light); font-weight: 400;">(${d.reviewCount})</small>
+                </div>
+                <span class="doctor-exp">${d.experience}</span>
+              </div>
+              <p style="font-size: 0.85rem; line-height: 1.5; color: var(--text-muted); margin-bottom: 1rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                ${d.bio}
+              </p>
+              <div class="doctor-card-footer">
+                <button type="button" class="btn btn-outline btn-sm" onclick="openDoctorBio('${d.id}')" title="View Biography">
+                  <i class="fa-regular fa-id-badge"></i> Info
+                </button>
+                <a href="appointment.html?doctor=${d.id}" class="btn btn-primary btn-sm" style="flex: 1;">
+                  <i class="fa-regular fa-calendar-check"></i> Book Now
+                </a>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // Filter events
+      searchInput.addEventListener('input', (e) => {
+        currentQuery = e.target.value;
+        filterAndRender();
+      });
+
+      sortSelect.addEventListener('change', filterAndRender);
+
+      pills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          pills.forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+          currentDept = pill.getAttribute('data-dept');
+          filterAndRender();
+        });
+      });
+
+      window.resetFilters = function() {
+        currentDept = 'all';
+        currentQuery = '';
+        searchInput.value = '';
+        pills.forEach(p => p.classList.remove('active'));
+        pills[0].classList.add('active');
+        filterAndRender();
+      };
+
+      // Doctor Bio Modal logic
+      window.openDoctorBio = function(id) {
+        const doc = CLINIC_DATA.doctors.find(d => d.id === id);
+        if (!doc) return;
+
+        const modal = document.getElementById('doctorBioModal');
+        const header = document.getElementById('bioHeader');
+        const bioText = document.getElementById('bioText');
+        const schedule = document.getElementById('bioSchedule');
+        const languages = document.getElementById('bioLanguages');
+        const bookLink = document.getElementById('bioBookLink');
+
+        header.innerHTML = `
+          <img src="${doc.image}" alt="${doc.name}" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary-light);" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=600';">
+          <div>
+            <span class="doctor-specialty">${doc.specialty}</span>
+            <h3 style="font-size: 1.35rem; margin-bottom: 0.2rem;">${doc.name}</h3>
+            <p style="font-size: 0.82rem; color: var(--text-light);">${doc.degrees}</p>
+          </div>
+        `;
+
+        bioText.textContent = doc.bio;
+        schedule.textContent = doc.available;
+        languages.textContent = doc.languages.join(', ');
+        bookLink.href = `appointment.html?doctor=${doc.id}`;
+
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+      };
+
+      document.getElementById('closeDoctorBioModal').addEventListener('click', () => {
+        document.getElementById('doctorBioModal').classList.remove('show');
+        document.body.style.overflow = '';
+      });
+
+      document.getElementById('doctorBioModal').addEventListener('click', (e) => {
+        if (e.target === document.getElementById('doctorBioModal')) {
+          document.getElementById('doctorBioModal').classList.remove('show');
+          document.body.style.overflow = '';
+        }
+      });
+
+      // Initial render
+      filterAndRender();
+    });
+  </script>
+</body>
+</html>

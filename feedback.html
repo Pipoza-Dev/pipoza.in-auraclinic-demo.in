@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="aqua">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Experience Feedback | AuraCare Clinic Demo</title>
+  <meta name="description" content="Share your clinic visit experience, staff evaluations, and facility suggestions in our interactive feedback portal.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome 6 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Demo Bar -->
+  <div class="demo-top-bar">
+    <span>✨ <strong>DEMO PREVIEW:</strong> Crafted by <span class="studio-tag">Pipiza Dev Studio</span></span>
+    <span>• Interactive Feedback Portal (Simulation Only).</span>
+    <a href="#" class="demo-info-trigger trigger-demo-modal"><i class="fa-solid fa-circle-info"></i> About Demo</a>
+    <a href="https://pipoza.s.gy/pipoza.in" class="back-to-studio-btn" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-left"></i> Return to Pipiza.in</a>
+  </div>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="brand-logo">
+          <div class="brand-icon"><i class="fa-solid fa-staff-snake"></i></div>
+          <div class="brand-info">
+            <span class="brand-title">AuraCare <span class="badge badge-demo">DEMO</span></span>
+            <span class="brand-subtitle">Health & Wellness Clinic</span>
+          </div>
+        </a>
+
+        <nav>
+          <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="doctors.html" class="nav-link">Doctors</a></li>
+            <li><a href="services.html" class="nav-link">Services</a></li>
+            <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+            <li><a href="about.html" class="nav-link">About & Studio</a></li>
+            <li><a href="feedback.html" class="nav-link active">Feedback</a></li>
+            <li><a href="report.html" class="nav-link">Report Bug</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <div class="theme-switcher-wrapper">
+            <button type="button" class="theme-btn" id="themeBtn" title="Choose Theme Palette">
+              <span class="theme-dot-current" id="currentThemeDot"></span>
+              <i class="fa-solid fa-palette"></i>
+              <span>Themes</span>
+            </button>
+            <div class="theme-menu" id="themeMenu"></div>
+          </div>
+
+          <a href="appointment.html" class="btn btn-primary">
+            <i class="fa-regular fa-calendar-check"></i>
+            <span>Book Appointment</span>
+          </a>
+
+          <button type="button" class="mobile-toggle" id="mobileMenuToggle">
+            <i class="fa-solid fa-bars-staggered"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-overlay" id="drawerOverlay"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo">
+        <div class="brand-icon" style="width:36px; height:36px; font-size:1.1rem;"><i class="fa-solid fa-staff-snake"></i></div>
+        <span class="brand-title" style="font-size:1.15rem;">AuraCare <span class="badge badge-demo">DEMO</span></span>
+      </div>
+      <button type="button" class="mobile-close-btn" id="mobileCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <!-- Return to Actual Website Link -->
+    <a href="https://pipoza.s.gy/pipoza.in" class="mobile-studio-back-banner" target="_blank" rel="noopener noreferrer">
+      <span><i class="fa-solid fa-arrow-left"></i> Return to Pipiza.in</span>
+      <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.75rem;"></i>
+    </a>
+
+    <ul class="mobile-nav-links">
+      <li><a href="index.html"><i class="fa-solid fa-house"></i> <span>Home</span></a></li>
+      <li><a href="doctors.html"><i class="fa-solid fa-user-doctor"></i> <span>Our Doctors</span></a></li>
+      <li><a href="services.html"><i class="fa-solid fa-heart-pulse"></i> <span>Treatments & Services</span></a></li>
+      <li><a href="reviews.html"><i class="fa-solid fa-star"></i> <span>Patient Reviews</span></a></li>
+      <li><a href="about.html"><i class="fa-solid fa-hospital"></i> <span>About & Pipiza Studio</span></a></li>
+      <li><a href="feedback.html" class="active"><i class="fa-solid fa-comment-dots"></i> <span>Patient Feedback</span></a></li>
+      <li><a href="report.html"><i class="fa-solid fa-bug"></i> <span>Report Website Issue</span></a></li>
+      <li><a href="appointment.html"><i class="fa-regular fa-calendar-check"></i> <span>Book Appointment</span></a></li>
+    </ul>
+
+    <div class="mobile-theme-selector">
+      <h4>Select Theme Color</h4>
+      <div class="mobile-theme-chips" id="mobileThemeChips"></div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="section-padding">
+    <div class="container container-narrow">
+      <div class="section-header">
+        <span class="sub-title">Your Voice Matters</span>
+        <h1 class="main-title">Patient Experience Feedback</h1>
+        <p class="description">
+          Help us uphold the highest standard of patient care. Rate your visit across our key quality benchmarks.
+        </p>
+      </div>
+
+      <div class="form-card">
+        <form id="clinicFeedbackForm">
+          <!-- Multi-Metric Star Ratings -->
+          <div style="background: var(--bg-surface-alt); padding: 1.5rem; border-radius: var(--radius-lg); margin-bottom: 2rem;">
+            <h4 style="font-size: 1.05rem; margin-bottom: 1.25rem; color: var(--text-main);">Clinical Quality Benchmarks</h4>
+
+            <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+              <!-- Metric 1: Cleanliness -->
+              <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+                <span style="font-weight: 600; font-size: 0.95rem;">Clinic Cleanliness & Hygiene</span>
+                <div class="star-rating-select metric-stars" data-metric="cleanliness">
+                  <i class="fa-solid fa-star active" data-v="1"></i>
+                  <i class="fa-solid fa-star active" data-v="2"></i>
+                  <i class="fa-solid fa-star active" data-v="3"></i>
+                  <i class="fa-solid fa-star active" data-v="4"></i>
+                  <i class="fa-solid fa-star active" data-v="5"></i>
+                </div>
+              </div>
+
+              <!-- Metric 2: Doctor Care -->
+              <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+                <span style="font-weight: 600; font-size: 0.95rem;">Physician Attention & Bedside Manner</span>
+                <div class="star-rating-select metric-stars" data-metric="doctorCare">
+                  <i class="fa-solid fa-star active" data-v="1"></i>
+                  <i class="fa-solid fa-star active" data-v="2"></i>
+                  <i class="fa-solid fa-star active" data-v="3"></i>
+                  <i class="fa-solid fa-star active" data-v="4"></i>
+                  <i class="fa-solid fa-star active" data-v="5"></i>
+                </div>
+              </div>
+
+              <!-- Metric 3: Waiting Time -->
+              <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+                <span style="font-weight: 600; font-size: 0.95rem;">Waiting Time & Punctuality</span>
+                <div class="star-rating-select metric-stars" data-metric="waitTime">
+                  <i class="fa-solid fa-star active" data-v="1"></i>
+                  <i class="fa-solid fa-star active" data-v="2"></i>
+                  <i class="fa-solid fa-star active" data-v="3"></i>
+                  <i class="fa-solid fa-star active" data-v="4"></i>
+                  <i class="fa-solid fa-star" data-v="5"></i>
+                </div>
+              </div>
+
+              <!-- Metric 4: Staff Friendliness -->
+              <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+                <span style="font-weight: 600; font-size: 0.95rem;">Reception & Nursing Friendliness</span>
+                <div class="star-rating-select metric-stars" data-metric="staff">
+                  <i class="fa-solid fa-star active" data-v="1"></i>
+                  <i class="fa-solid fa-star active" data-v="2"></i>
+                  <i class="fa-solid fa-star active" data-v="3"></i>
+                  <i class="fa-solid fa-star active" data-v="4"></i>
+                  <i class="fa-solid fa-star active" data-v="5"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Patient & Visit Details -->
+          <div class="grid-2" style="gap: 1.25rem;">
+            <div class="form-group">
+              <label class="form-label" for="feedbackName">Your Name <span class="required">*</span></label>
+              <input type="text" id="feedbackName" class="form-control" placeholder="e.g. Rachel Adams" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="feedbackEmail">Email (Optional)</label>
+              <input type="email" id="feedbackEmail" class="form-control" placeholder="rachel@example.com">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="feedbackDept">Department Visited</label>
+            <select id="feedbackDept" class="form-control">
+              <option value="Cardiology">Cardiology Department</option>
+              <option value="Neurology">Neurology Department</option>
+              <option value="Pediatrics">Pediatrics Department</option>
+              <option value="Orthopedics">Orthopedics & Physical Therapy</option>
+              <option value="Dermatology">Dermatology Center</option>
+              <option value="Dental">Dental Care Suite</option>
+              <option value="General">General Practice</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="feedbackComments">Detailed Comments & Suggestions</label>
+            <textarea id="feedbackComments" class="form-control" placeholder="Share any specific praises or areas where our clinic could improve..." required></textarea>
+          </div>
+
+          <div class="simulation-notice-box">
+            <h4><i class="fa-solid fa-triangle-exclamation"></i> Simulated Feedback Notice</h4>
+            <p>This is a demonstration form created for <strong>Pipiza Dev Studio</strong>. No data will be sent to any server. You will be redirected to the interactive success confirmation page.</p>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-top: 1rem;">
+            <i class="fa-solid fa-paper-plane"></i> Submit Simulated Feedback
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Floating Demo Pill -->
+  <div class="floating-demo-pill trigger-demo-modal">
+    <div class="pulse-dot"></div>
+    <span>Pipiza Dev Demo</span>
+    <span class="badge badge-demo">SIMULATION</span>
+  </div>
+
+  <!-- Global Demo Modal -->
+  <div class="modal-overlay" id="demoModalOverlay">
+    <div class="modal-content">
+      <button type="button" class="modal-close-btn" id="closeDemoModal"><i class="fa-solid fa-xmark"></i></button>
+      <div style="text-align: center; margin-bottom: 1.5rem;">
+        <div style="width: 60px; height: 60px; border-radius: 50%; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 1rem;">
+          <i class="fa-solid fa-laptop-code"></i>
+        </div>
+        <h3 style="font-size: 1.45rem; margin-bottom: 0.35rem;">Pipiza Dev Studio Demo Notice</h3>
+        <span class="badge badge-demo">NON-OPERATIONAL SHOWCASE</span>
+      </div>
+      <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.25rem;">
+        This page demonstrates multi-criterion rating widgets, responsive form components, and accessible form styling.
+      </p>
+      <div style="display: flex; flex-direction: column; gap: 0.65rem;">
+        <a href="https://pipoza.s.gy/pipoza.in" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block" style="background: linear-gradient(135deg, #38bdf8, #818cf8); color: #0f172a;">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Official Website (pipoza.in)
+        </a>
+        <button type="button" class="btn btn-outline btn-block" onclick="document.getElementById('closeDemoModal').click();">
+          Got It, Continue
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="margin-bottom: 1rem;">
+            <div class="brand-icon"><i class="fa-solid fa-staff-snake"></i></div>
+            <div class="brand-info">
+              <span class="brand-title">AuraCare <span class="badge badge-demo">DEMO</span></span>
+              <span class="brand-subtitle">Health & Wellness Clinic</span>
+            </div>
+          </a>
+          <p>Demonstrating premier web architecture, light visual design, and fluid medical user journeys.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Pages</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+            <li><a href="doctors.html"><i class="fa-solid fa-chevron-right"></i> Find Doctors</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right"></i> Medical Services</a></li>
+            <li><a href="reviews.html"><i class="fa-solid fa-chevron-right"></i> Patient Reviews</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Simulations</h4>
+          <ul class="footer-links">
+            <li><a href="appointment.html"><i class="fa-solid fa-chevron-right"></i> Book Appointment</a></li>
+            <li><a href="feedback.html"><i class="fa-solid fa-chevron-right"></i> Patient Feedback</a></li>
+            <li><a href="report.html"><i class="fa-solid fa-chevron-right"></i> Report a Bug</a></li>
+            <li><a href="success.html?type=demo"><i class="fa-solid fa-chevron-right"></i> Sample Success Page</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Simulated Newsletter</h4>
+          <p style="font-size: 0.88rem; margin-bottom: 1rem;">Get monthly health guidance directly from clinic staff.</p>
+          <form class="newsletter-form" style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <input type="email" placeholder="Enter your email" required class="form-control" style="font-size: 0.9rem;">
+            <button type="submit" class="btn btn-primary btn-sm"><i class="fa-regular fa-paper-plane"></i> Subscribe (Demo)</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 AuraCare Clinic. Built with precision by <a href="https://pipoza.s.gy/pipoza.in" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight:700;">Pipiza Dev Studio <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.75rem;"></i></a>.</div>
+        <div class="footer-demo-notice"><i class="fa-solid fa-shield-cat"></i> Demo template only.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Metric star pickers
+      document.querySelectorAll('.metric-stars').forEach(group => {
+        const stars = group.querySelectorAll('i');
+        stars.forEach(star => {
+          star.addEventListener('click', () => {
+            const val = parseInt(star.getAttribute('data-v'));
+            stars.forEach(s => {
+              if (parseInt(s.getAttribute('data-v')) <= val) {
+                s.classList.add('active');
+              } else {
+                s.classList.remove('active');
+              }
+            });
+          });
+        });
+      });
+
+      // Submit feedback simulation
+      const form = document.getElementById('clinicFeedbackForm');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('feedbackName').value;
+        const dept = document.getElementById('feedbackDept').value;
+        const ref = generateDemoCode("AUR-FB");
+
+        window.location.href = `success.html?type=feedback&ref=${ref}&name=${encodeURIComponent(name)}&dept=${encodeURIComponent(dept)}`;
+      });
+    });
+  </script>
+</body>
+</html>

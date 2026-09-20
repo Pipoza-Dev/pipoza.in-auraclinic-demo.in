@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="aqua">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Issue & Bug Report | Pipiza Dev Studio</title>
+  <meta name="description" content="Report website bugs, mobile rendering glitches, or UX suggestions to the development team at Pipiza Dev Studio.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome 6 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Demo Bar -->
+  <div class="demo-top-bar">
+    <span>✨ <strong>DEMO PREVIEW:</strong> Crafted by <span class="studio-tag">Pipiza Dev Studio</span></span>
+    <span>• Website Bug & Issue Reporting Tool (Demo Simulation).</span>
+    <a href="#" class="demo-info-trigger trigger-demo-modal"><i class="fa-solid fa-circle-info"></i> About Demo</a>
+    <a href="https://pipoza.s.gy/pipoza.in" class="back-to-studio-btn" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-left"></i> Return to Pipiza.in</a>
+  </div>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="brand-logo">
+          <div class="brand-icon"><i class="fa-solid fa-staff-snake"></i></div>
+          <div class="brand-info">
+            <span class="brand-title">AuraCare <span class="badge badge-demo">DEMO</span></span>
+            <span class="brand-subtitle">Health & Wellness Clinic</span>
+          </div>
+        </a>
+
+        <nav>
+          <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="doctors.html" class="nav-link">Doctors</a></li>
+            <li><a href="services.html" class="nav-link">Services</a></li>
+            <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+            <li><a href="about.html" class="nav-link">About & Studio</a></li>
+            <li><a href="feedback.html" class="nav-link">Feedback</a></li>
+            <li><a href="report.html" class="nav-link active">Report Bug</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <div class="theme-switcher-wrapper">
+            <button type="button" class="theme-btn" id="themeBtn" title="Choose Theme Palette">
+              <span class="theme-dot-current" id="currentThemeDot"></span>
+              <i class="fa-solid fa-palette"></i>
+              <span>Themes</span>
+            </button>
+            <div class="theme-menu" id="themeMenu"></div>
+          </div>
+
+          <a href="appointment.html" class="btn btn-primary">
+            <i class="fa-regular fa-calendar-check"></i>
+            <span>Book Appointment</span>
+          </a>
+
+          <button type="button" class="mobile-toggle" id="mobileMenuToggle">
+            <i class="fa-solid fa-bars-staggered"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-overlay" id="drawerOverlay"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo">
+        <div class="brand-icon" style="width:36px; height:36px; font-size:1.1rem;"><i class="fa-solid fa-staff-snake"></i></div>
+        <span class="brand-title" style="font-size:1.15rem;">AuraCare <span class="badge badge-demo">DEMO</span></span>
+      </div>
+      <button type="button" class="mobile-close-btn" id="mobileCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <!-- Return to Actual Website Link -->
+    <a href="https://pipoza.s.gy/pipoza.in" class="mobile-studio-back-banner" target="_blank" rel="noopener noreferrer">
+      <span><i class="fa-solid fa-arrow-left"></i> Return to Pipiza.in</span>
+      <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.75rem;"></i>
+    </a>
+
+    <ul class="mobile-nav-links">
+      <li><a href="index.html"><i class="fa-solid fa-house"></i> <span>Home</span></a></li>
+      <li><a href="doctors.html"><i class="fa-solid fa-user-doctor"></i> <span>Our Doctors</span></a></li>
+      <li><a href="services.html"><i class="fa-solid fa-heart-pulse"></i> <span>Treatments & Services</span></a></li>
+      <li><a href="reviews.html"><i class="fa-solid fa-star"></i> <span>Patient Reviews</span></a></li>
+      <li><a href="about.html"><i class="fa-solid fa-hospital"></i> <span>About & Pipiza Studio</span></a></li>
+      <li><a href="feedback.html"><i class="fa-solid fa-comment-dots"></i> <span>Patient Feedback</span></a></li>
+      <li><a href="report.html" class="active"><i class="fa-solid fa-bug"></i> <span>Report Website Issue</span></a></li>
+      <li><a href="appointment.html"><i class="fa-regular fa-calendar-check"></i> <span>Book Appointment</span></a></li>
+    </ul>
+
+    <div class="mobile-theme-selector">
+      <h4>Select Theme Color</h4>
+      <div class="mobile-theme-chips" id="mobileThemeChips"></div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="section-padding">
+    <div class="container container-narrow">
+      <div class="section-header">
+        <span class="sub-title">Quality Assurance</span>
+        <h1 class="main-title">Report a Website Bug or Issue</h1>
+        <p class="description">
+          Notice a styling glitch, a mobile layout anomaly, or an unclickable link? Test our simulated developer reporting workflow for <strong>Pipiza Dev Studio</strong>.
+        </p>
+      </div>
+
+      <div class="form-card">
+        <form id="websiteBugReportForm">
+          <div class="grid-2" style="gap: 1.25rem;">
+            <div class="form-group">
+              <label class="form-label" for="issueCategory">Issue Category <span class="required">*</span></label>
+              <select id="issueCategory" class="form-control" required>
+                <option value="Mobile Responsiveness">Mobile Responsiveness / Viewport Glitch</option>
+                <option value="Visual Alignment">Visual Alignment / CSS Misalignment</option>
+                <option value="Broken Interaction">Broken Button or Link</option>
+                <option value="Theme Inconsistency">Theme Color Inconsistency</option>
+                <option value="Animation Performance">Animation Lag / Performance</option>
+                <option value="Content Typo">Content Typo or Copy Error</option>
+                <option value="Feature Suggestion">New Feature Suggestion</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="issueSeverity">Severity Level <span class="required">*</span></label>
+              <select id="issueSeverity" class="form-control" required>
+                <option value="Low">Low (Cosmetic tweak)</option>
+                <option value="Medium" selected>Medium (Noticeable UI flaw)</option>
+                <option value="High">High (Impairs navigation)</option>
+                <option value="Critical">Critical (Blocking issue)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid-2" style="gap: 1.25rem;">
+            <div class="form-group">
+              <label class="form-label" for="pageAffected">Page Affected</label>
+              <select id="pageAffected" class="form-control">
+                <option value="Homepage (index.html)">Homepage (index.html)</option>
+                <option value="Doctors (doctors.html)">Doctors Directory (doctors.html)</option>
+                <option value="Services (services.html)">Services & FAQ (services.html)</option>
+                <option value="Reviews (reviews.html)">Reviews & Testimonials (reviews.html)</option>
+                <option value="Appointment (appointment.html)">Appointment Portal (appointment.html)</option>
+                <option value="Feedback (feedback.html)">Feedback Form (feedback.html)</option>
+                <option value="About & Studio (about.html)">About Clinic (about.html)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="deviceType">Your Device / Browser</label>
+              <input type="text" id="deviceType" class="form-control" placeholder="e.g. iPhone 15 Safari, Chrome on Windows 11">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="bugDescription">Detailed Description <span class="required">*</span></label>
+            <textarea id="bugDescription" class="form-control" placeholder="Explain what happened, what you expected to see, and steps to reproduce..." required></textarea>
+          </div>
+
+          <!-- Simulated Screenshot Upload Area -->
+          <div class="form-group">
+            <label class="form-label">Attach Screenshot (Simulated)</label>
+            <div id="dropzoneBox" style="border: 2px dashed var(--border-color); border-radius: var(--radius-md); padding: 2rem; text-align: center; background: var(--bg-surface-alt); cursor: pointer; transition: var(--transition);">
+              <i class="fa-solid fa-cloud-arrow-up" style="font-size: 2rem; color: var(--primary); margin-bottom: 0.5rem; display: block;"></i>
+              <p style="font-weight: 600; font-size: 0.9rem; margin-bottom: 0.2rem;" id="dropzoneText">Click to select a sample file or drop image here</p>
+              <p style="font-size: 0.76rem; color: var(--text-light); margin: 0;">Supports PNG, JPG, WebP up to 10MB (Simulated)</p>
+            </div>
+          </div>
+
+          <div class="simulation-notice-box">
+            <h4><i class="fa-solid fa-triangle-exclamation"></i> Simulated Bug Reporting</h4>
+            <p>Submitting this report will not file a real bug ticket or upload any files. It will redirect you to the custom confirmation screen with a generated ticket reference code (e.g. <code>AUR-REP-7312-DEMO</code>).</p>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-top: 1rem;">
+            <i class="fa-solid fa-bug"></i> Submit Bug Report (Simulation)
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Floating Demo Pill -->
+  <div class="floating-demo-pill trigger-demo-modal">
+    <div class="pulse-dot"></div>
+    <span>Pipiza Dev Demo</span>
+    <span class="badge badge-demo">SIMULATION</span>
+  </div>
+
+  <!-- Global Demo Modal -->
+  <div class="modal-overlay" id="demoModalOverlay">
+    <div class="modal-content">
+      <button type="button" class="modal-close-btn" id="closeDemoModal"><i class="fa-solid fa-xmark"></i></button>
+      <div style="text-align: center; margin-bottom: 1.5rem;">
+        <div style="width: 60px; height: 60px; border-radius: 50%; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 1rem;">
+          <i class="fa-solid fa-laptop-code"></i>
+        </div>
+        <h3 style="font-size: 1.45rem; margin-bottom: 0.35rem;">Pipiza Dev Studio Demo Notice</h3>
+        <span class="badge badge-demo">NON-OPERATIONAL SHOWCASE</span>
+      </div>
+      <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.25rem;">
+        This bug reporting workflow demonstrates QA submission flows, simulated file dropzones, and graceful feedback loops.
+      </p>
+      <div style="display: flex; flex-direction: column; gap: 0.65rem;">
+        <a href="https://pipoza.s.gy/pipoza.in" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block" style="background: linear-gradient(135deg, #38bdf8, #818cf8); color: #0f172a;">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Official Website (pipoza.in)
+        </a>
+        <button type="button" class="btn btn-outline btn-block" onclick="document.getElementById('closeDemoModal').click();">
+          Got It, Continue
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="margin-bottom: 1rem;">
+            <div class="brand-icon"><i class="fa-solid fa-staff-snake"></i></div>
+            <div class="brand-info">
+              <span class="brand-title">AuraCare <span class="badge badge-demo">DEMO</span></span>
+              <span class="brand-subtitle">Health & Wellness Clinic</span>
+            </div>
+          </a>
+          <p>Demonstrating premier web architecture, light visual design, and fluid medical user journeys.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Pages</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+            <li><a href="doctors.html"><i class="fa-solid fa-chevron-right"></i> Find Doctors</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right"></i> Medical Services</a></li>
+            <li><a href="reviews.html"><i class="fa-solid fa-chevron-right"></i> Patient Reviews</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Simulations</h4>
+          <ul class="footer-links">
+            <li><a href="appointment.html"><i class="fa-solid fa-chevron-right"></i> Book Appointment</a></li>
+            <li><a href="feedback.html"><i class="fa-solid fa-chevron-right"></i> Patient Feedback</a></li>
+            <li><a href="report.html"><i class="fa-solid fa-chevron-right"></i> Report a Bug</a></li>
+            <li><a href="success.html?type=demo"><i class="fa-solid fa-chevron-right"></i> Sample Success Page</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Simulated Newsletter</h4>
+          <p style="font-size: 0.88rem; margin-bottom: 1rem;">Get monthly health guidance directly from clinic staff.</p>
+          <form class="newsletter-form" style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <input type="email" placeholder="Enter your email" required class="form-control" style="font-size: 0.9rem;">
+            <button type="submit" class="btn btn-primary btn-sm"><i class="fa-regular fa-paper-plane"></i> Subscribe (Demo)</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 AuraCare Clinic. Built with precision by <a href="https://pipoza.s.gy/pipoza.in" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight:700;">Pipiza Dev Studio <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.75rem;"></i></a>.</div>
+        <div class="footer-demo-notice"><i class="fa-solid fa-shield-cat"></i> Demo template only.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Auto-detect browser/device in input
+      const devInput = document.getElementById('deviceType');
+      if (devInput) {
+        devInput.value = navigator.userAgent.includes('Mobile') ? 'Mobile Device / Touch Browser' : 'Desktop Browser (Screen: ' + window.innerWidth + 'x' + window.innerHeight + ')';
+      }
+
+      // Dropzone click simulation
+      const dropzone = document.getElementById('dropzoneBox');
+      const dropzoneText = document.getElementById('dropzoneText');
+      dropzone.addEventListener('click', () => {
+        dropzoneText.innerHTML = '<i class="fa-solid fa-circle-check" style="color: #10b981;"></i> Simulated File Attached: <code>screenshot_bug_log.png</code> (1.4 MB)';
+        dropzone.style.borderColor = '#10b981';
+        dropzone.style.background = '#f0fdf4';
+      });
+
+      // Submit bug report simulation
+      const form = document.getElementById('websiteBugReportForm');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const cat = document.getElementById('issueCategory').value;
+        const sev = document.getElementById('issueSeverity').value;
+        const page = document.getElementById('pageAffected').value;
+        const ref = generateDemoCode("AUR-REP");
+
+        window.location.href = `success.html?type=report&ref=${ref}&category=${encodeURIComponent(cat)}&severity=${encodeURIComponent(sev)}&page=${encodeURIComponent(page)}`;
+      });
+    });
+  </script>
+</body>
+</html>

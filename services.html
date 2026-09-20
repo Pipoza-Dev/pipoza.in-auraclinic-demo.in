@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="aqua">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medical Services & Treatments | AuraCare Clinic Demo</title>
+  <meta name="description" content="Explore comprehensive medical specialties, advanced surgical facilities, diagnostic scans, and transparent clinic pricing at AuraCare.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome 6 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Demo Bar -->
+  <div class="demo-top-bar">
+    <span>✨ <strong>DEMO PREVIEW:</strong> Crafted by <span class="studio-tag">Pipiza Dev Studio</span></span>
+    <span>• Medical Service Catalog & Transparent Pricing (Demonstration Only).</span>
+    <a href="#" class="demo-info-trigger trigger-demo-modal"><i class="fa-solid fa-circle-info"></i> About Demo</a>
+    <a href="https://pipoza.s.gy/pipoza.in" class="back-to-studio-btn" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-left"></i> Return to Pipiza.in</a>
+  </div>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="brand-logo">
+          <div class="brand-icon"><i class="fa-solid fa-staff-snake"></i></div>
+          <div class="brand-info">
+            <span class="brand-title">AuraCare <span class="badge badge-demo">DEMO</span></span>
+            <span class="brand-subtitle">Health & Wellness Clinic</span>
+          </div>
+        </a>
+
+        <nav>
+          <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="doctors.html" class="nav-link">Doctors</a></li>
+            <li><a href="services.html" class="nav-link active">Services</a></li>
+            <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+            <li><a href="about.html" class="nav-link">About & Studio</a></li>
+            <li><a href="feedback.html" class="nav-link">Feedback</a></li>
+            <li><a href="report.html" class="nav-link">Report Bug</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <div class="theme-switcher-wrapper">
+            <button type="button" class="theme-btn" id="themeBtn" title="Choose Theme Palette">
+              <span class="theme-dot-current" id="currentThemeDot"></span>
+              <i class="fa-solid fa-palette"></i>
+              <span>Themes</span>
+            </button>
+            <div class="theme-menu" id="themeMenu"></div>
+          </div>
+
+          <a href="appointment.html" class="btn btn-primary">
+            <i class="fa-regular fa-calendar-check"></i>
+            <span>Book Appointment</span>
+          </a>
+
+          <button type="button" class="mobile-toggle" id="mobileMenuToggle">
+            <i class="fa-solid fa-bars-staggered"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-overlay" id="drawerOverlay"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo">
+        <div class="brand-icon" style="width:36px; height:36px; font-size:1.1rem;"><i class="fa-solid fa-staff-snake"></i></div>
+        <span class="brand-title" style="font-size:1.15rem;">AuraCare <span class="badge badge-demo">DEMO</span></span>
+      </div>
+      <button type="button" class="mobile-close-btn" id="mobileCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <!-- Return to Actual Website Link -->
+    <a href="https://pipoza.s.gy/pipoza.in" class="mobile-studio-back-banner" target="_blank" rel="noopener noreferrer">
+      <span><i class="fa-solid fa-arrow-left"></i> Return to Pipiza.in</span>
+      <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.75rem;"></i>
+    </a>
+
+    <ul class="mobile-nav-links">
+      <li><a href="index.html"><i class="fa-solid fa-house"></i> <span>Home</span></a></li>
+      <li><a href="doctors.html"><i class="fa-solid fa-user-doctor"></i> <span>Our Doctors</span></a></li>
+      <li><a href="services.html" class="active"><i class="fa-solid fa-heart-pulse"></i> <span>Treatments & Services</span></a></li>
+      <li><a href="reviews.html"><i class="fa-solid fa-star"></i> <span>Patient Reviews</span></a></li>
+      <li><a href="about.html"><i class="fa-solid fa-hospital"></i> <span>About & Pipiza Studio</span></a></li>
+      <li><a href="feedback.html"><i class="fa-solid fa-comment-dots"></i> <span>Patient Feedback</span></a></li>
+      <li><a href="report.html"><i class="fa-solid fa-bug"></i> <span>Report Website Issue</span></a></li>
+      <li><a href="appointment.html"><i class="fa-regular fa-calendar-check"></i> <span>Book Appointment</span></a></li>
+    </ul>
+
+    <div style="margin-bottom: 1.5rem;">
+      <a href="appointment.html" class="btn btn-primary btn-block"><i class="fa-solid fa-calendar-plus"></i> Quick Book (Demo)</a>
+    </div>
+
+    <div class="mobile-theme-selector">
+      <h4>Select Theme Color</h4>
+      <div class="mobile-theme-chips" id="mobileThemeChips"></div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="sub-title">Clinical Disciplines</span>
+        <h1 class="main-title">Specialized Treatments & Care</h1>
+        <p class="description">
+          A holistic continuum of healthcare services, combining board-certified medical expertise, low-radiation diagnostics, and patient-first rehabilitation.
+        </p>
+      </div>
+
+      <!-- Services Grid -->
+      <div class="grid-3" id="servicesGrid">
+        <!-- Rendered by JS from data.js -->
+      </div>
+
+      <!-- Technology & Facility Highlight -->
+      <div style="margin-top: 5rem; background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: 3rem; box-shadow: var(--card-shadow);">
+        <div class="grid-2" style="align-items: center; gap: 3rem;">
+          <div>
+            <span class="badge badge-secondary" style="margin-bottom: 1rem;">Cutting-Edge Medical Suites</span>
+            <h2 style="font-size: 2.2rem; margin-bottom: 1rem;">Modern Diagnostic Infrastructure</h2>
+            <p style="margin-bottom: 1.5rem;">
+              Our diagnostic suites are equipped with the latest ultra-quiet MRI scans, high-resolution 4D ultrasounds, and rapid-result in-house pathology analyzers that return critical lab values in under 30 minutes.
+            </p>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.85rem;">
+              <li style="display: flex; align-items: center; gap: 0.75rem; font-weight: 600; font-size: 0.95rem;">
+                <i class="fa-solid fa-circle-check" style="color: #10b981;"></i> 70% Less Radiation Digital X-Rays
+              </li>
+              <li style="display: flex; align-items: center; gap: 0.75rem; font-weight: 600; font-size: 0.95rem;">
+                <i class="fa-solid fa-circle-check" style="color: #10b981;"></i> Artificial Intelligence Early-Screening Assistants
+              </li>
+              <li style="display: flex; align-items: center; gap: 0.75rem; font-weight: 600; font-size: 0.95rem;">
+                <i class="fa-solid fa-circle-check" style="color: #10b981;"></i> HEPA-14 Micro-Filtered Clean Air Surgical Theatres
+              </li>
+            </ul>
+          </div>
+          <div>
+            <img 
+              src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800" 
+              alt="Advanced surgical room" 
+              style="border-radius: var(--radius-lg); width: 100%; height: 380px; object-fit: cover; box-shadow: var(--card-hover-shadow);"
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Section -->
+      <div style="margin-top: 5rem;">
+        <div class="section-header">
+          <span class="sub-title">Got Questions?</span>
+          <h2 class="main-title">Frequently Asked Questions</h2>
+          <p class="description">Everything you need to know about navigating the AuraCare demo clinic experience.</p>
+        </div>
+
+        <div class="container-narrow" id="faqAccordion">
+          <!-- Populated by script -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Floating Demo Pill -->
+  <div class="floating-demo-pill trigger-demo-modal">
+    <div class="pulse-dot"></div>
+    <span>Pipiza Dev Demo</span>
+    <span class="badge badge-demo">SIMULATION</span>
+  </div>
+
+  <!-- Global Demo Modal -->
+  <div class="modal-overlay" id="demoModalOverlay">
+    <div class="modal-content">
+      <button type="button" class="modal-close-btn" id="closeDemoModal"><i class="fa-solid fa-xmark"></i></button>
+      <div style="text-align: center; margin-bottom: 1.5rem;">
+        <div style="width: 60px; height: 60px; border-radius: 50%; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 1rem;">
+          <i class="fa-solid fa-laptop-code"></i>
+        </div>
+        <h3 style="font-size: 1.45rem; margin-bottom: 0.35rem;">Pipiza Dev Studio Demo Notice</h3>
+        <span class="badge badge-demo">NON-OPERATIONAL SHOWCASE</span>
+      </div>
+      <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.25rem;">
+        This medical services catalog illustrates custom layout composition, responsive pricing cards, and interactive FAQ mechanics.
+      </p>
+      <div class="simulation-notice-box" style="margin-bottom: 1.25rem;">
+        <h4><i class="fa-solid fa-triangle-exclamation"></i> Notice:</h4>
+        <p>All prices and service packages shown are for demonstration purposes only.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 0.65rem;">
+        <a href="https://pipoza.s.gy/pipoza.in" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block" style="background: linear-gradient(135deg, #38bdf8, #818cf8); color: #0f172a;">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Official Website (pipoza.in)
+        </a>
+        <button type="button" class="btn btn-outline btn-block" onclick="document.getElementById('closeDemoModal').click();">
+          Got It, Continue
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="margin-bottom: 1rem;">
+            <div class="brand-icon"><i class="fa-solid fa-staff-snake"></i></div>
+            <div class="brand-info">
+              <span class="brand-title">AuraCare <span class="badge badge-demo">DEMO</span></span>
+              <span class="brand-subtitle">Health & Wellness Clinic</span>
+            </div>
+          </a>
+          <p>Demonstrating premier web architecture, light visual design, and fluid medical user journeys.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Pages</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+            <li><a href="doctors.html"><i class="fa-solid fa-chevron-right"></i> Find Doctors</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right"></i> Medical Services</a></li>
+            <li><a href="reviews.html"><i class="fa-solid fa-chevron-right"></i> Patient Reviews</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Simulations</h4>
+          <ul class="footer-links">
+            <li><a href="appointment.html"><i class="fa-solid fa-chevron-right"></i> Book Appointment</a></li>
+            <li><a href="feedback.html"><i class="fa-solid fa-chevron-right"></i> Patient Feedback</a></li>
+            <li><a href="report.html"><i class="fa-solid fa-chevron-right"></i> Report a Bug</a></li>
+            <li><a href="success.html?type=demo"><i class="fa-solid fa-chevron-right"></i> Sample Success Page</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Simulated Newsletter</h4>
+          <p style="font-size: 0.88rem; margin-bottom: 1rem;">Get monthly health guidance directly from clinic staff.</p>
+          <form class="newsletter-form" style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <input type="email" placeholder="Enter your email" required class="form-control" style="font-size: 0.9rem;">
+            <button type="submit" class="btn btn-primary btn-sm"><i class="fa-regular fa-paper-plane"></i> Subscribe (Demo)</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 AuraCare Clinic. Built with precision by <a href="https://pipoza.s.gy/pipoza.in" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight:700;">Pipiza Dev Studio <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.75rem;"></i></a>.</div>
+        <div class="footer-demo-notice"><i class="fa-solid fa-shield-cat"></i> Demo template only.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Render all services
+      const servicesContainer = document.getElementById('servicesGrid');
+      if (servicesContainer) {
+        servicesContainer.innerHTML = CLINIC_DATA.services.map(s => `
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fa-solid ${s.icon}"></i>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem;">
+              <h3 style="font-size: 1.3rem;">${s.title}</h3>
+              <span class="badge badge-primary" style="font-size: 0.75rem;">${s.price}</span>
+            </div>
+            <p style="margin-bottom: 1.25rem;">${s.shortDesc}</p>
+            
+            <div style="margin-bottom: 1.5rem; background: var(--bg-surface-alt); padding: 1rem; border-radius: var(--radius-md);">
+              <h5 style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.6rem; letter-spacing: 0.04em;">Key Procedures Included</h5>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.85rem;">
+                ${s.features.map(f => `<li><i class="fa-solid fa-check" style="color: var(--primary); font-size: 0.75rem; margin-right: 0.4rem;"></i> ${f}</li>`).join('')}
+              </ul>
+            </div>
+
+            <div style="margin-top: auto; display: flex; gap: 0.75rem;">
+              <a href="appointment.html?dept=${encodeURIComponent(s.category)}" class="btn btn-primary btn-sm btn-block">
+                <i class="fa-regular fa-calendar-check"></i> Book Consultation
+              </a>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // 2. Render FAQ Accordion
+      const faqContainer = document.getElementById('faqAccordion');
+      if (faqContainer) {
+        faqContainer.innerHTML = CLINIC_DATA.faqs.map((faq, idx) => `
+          <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); margin-bottom: 1rem; overflow: hidden; box-shadow: var(--card-shadow);">
+            <button 
+              type="button" 
+              class="faq-btn" 
+              style="width: 100%; text-align: left; padding: 1.25rem 1.5rem; background: transparent; border: none; font-size: 1.05rem; font-weight: 700; color: var(--text-main); display: flex; justify-content: space-between; align-items: center; cursor: pointer;"
+              onclick="toggleFaq(${idx})"
+            >
+              <span>${faq.question}</span>
+              <i class="fa-solid fa-chevron-down faq-chevron-${idx}" style="transition: transform 0.3s ease; color: var(--primary);"></i>
+            </button>
+            <div id="faqAnswer-${idx}" style="display: ${idx === 0 ? 'block' : 'none'}; padding: 0 1.5rem 1.25rem; font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">
+              ${faq.answer}
+            </div>
+          </div>
+        `).join('');
+      }
+
+      window.toggleFaq = function(idx) {
+        const el = document.getElementById(`faqAnswer-${idx}`);
+        const chevron = document.querySelector(`.faq-chevron-${idx}`);
+        if (el.style.display === 'none' || el.style.display === '') {
+          el.style.display = 'block';
+          chevron.style.transform = 'rotate(180deg)';
+        } else {
+          el.style.display = 'none';
+          chevron.style.transform = 'rotate(0deg)';
+        }
+      };
+    });
+  </script>
+</body>
+</html>

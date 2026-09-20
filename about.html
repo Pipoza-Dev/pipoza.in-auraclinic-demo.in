@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="aqua">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About AuraCare Clinic & Pipiza Dev Studio Showcase</title>
+  <meta name="description" content="Discover the philosophy behind AuraCare Health Clinic and explore the web craftsmanship of Pipiza Dev Studio.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome 6 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Demo Bar -->
+  <div class="demo-top-bar">
+    <span>✨ <strong>DEMO PREVIEW:</strong> Crafted by <span class="studio-tag">Pipiza Dev Studio</span></span>
+    <span>• Showcase Website (Non-operational clinic).</span>
+    <a href="#" class="demo-info-trigger trigger-demo-modal"><i class="fa-solid fa-circle-info"></i> About Demo</a>
+    <a href="https://pipoza.s.gy/pipoza.in" class="back-to-studio-btn" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-left"></i> Return to Pipiza.in</a>
+  </div>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="brand-logo">
+          <div class="brand-icon"><i class="fa-solid fa-staff-snake"></i></div>
+          <div class="brand-info">
+            <span class="brand-title">AuraCare <span class="badge badge-demo">DEMO</span></span>
+            <span class="brand-subtitle">Health & Wellness Clinic</span>
+          </div>
+        </a>
+
+        <nav>
+          <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="doctors.html" class="nav-link">Doctors</a></li>
+            <li><a href="services.html" class="nav-link">Services</a></li>
+            <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+            <li><a href="about.html" class="nav-link active">About & Studio</a></li>
+            <li><a href="feedback.html" class="nav-link">Feedback</a></li>
+            <li><a href="report.html" class="nav-link">Report Bug</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <div class="theme-switcher-wrapper">
+            <button type="button" class="theme-btn" id="themeBtn" title="Choose Theme Palette">
+              <span class="theme-dot-current" id="currentThemeDot"></span>
+              <i class="fa-solid fa-palette"></i>
+              <span>Themes</span>
+            </button>
+            <div class="theme-menu" id="themeMenu"></div>
+          </div>
+
+          <a href="appointment.html" class="btn btn-primary">
+            <i class="fa-regular fa-calendar-check"></i>
+            <span>Book Appointment</span>
+          </a>
+
+          <button type="button" class="mobile-toggle" id="mobileMenuToggle">
+            <i class="fa-solid fa-bars-staggered"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-overlay" id="drawerOverlay"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo">
+        <div class="brand-icon" style="width:36px; height:36px; font-size:1.1rem;"><i class="fa-solid fa-staff-snake"></i></div>
+        <span class="brand-title" style="font-size:1.15rem;">AuraCare <span class="badge badge-demo">DEMO</span></span>
+      </div>
+      <button type="button" class="mobile-close-btn" id="mobileCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <!-- Return to Actual Website Link -->
+    <a href="https://pipoza.s.gy/pipoza.in" class="mobile-studio-back-banner" target="_blank" rel="noopener noreferrer">
+      <span><i class="fa-solid fa-arrow-left"></i> Return to Pipiza.in</span>
+      <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.75rem;"></i>
+    </a>
+
+    <ul class="mobile-nav-links">
+      <li><a href="index.html"><i class="fa-solid fa-house"></i> <span>Home</span></a></li>
+      <li><a href="doctors.html"><i class="fa-solid fa-user-doctor"></i> <span>Our Doctors</span></a></li>
+      <li><a href="services.html"><i class="fa-solid fa-heart-pulse"></i> <span>Treatments & Services</span></a></li>
+      <li><a href="reviews.html"><i class="fa-solid fa-star"></i> <span>Patient Reviews</span></a></li>
+      <li><a href="about.html" class="active"><i class="fa-solid fa-hospital"></i> <span>About & Pipiza Studio</span></a></li>
+      <li><a href="feedback.html"><i class="fa-solid fa-comment-dots"></i> <span>Patient Feedback</span></a></li>
+      <li><a href="report.html"><i class="fa-solid fa-bug"></i> <span>Report Website Issue</span></a></li>
+      <li><a href="appointment.html"><i class="fa-regular fa-calendar-check"></i> <span>Book Appointment</span></a></li>
+    </ul>
+
+    <div style="margin-bottom: 1.5rem;">
+      <a href="appointment.html" class="btn btn-primary btn-block"><i class="fa-solid fa-calendar-plus"></i> Quick Book (Demo)</a>
+    </div>
+
+    <div class="mobile-theme-selector">
+      <h4>Select Theme Color</h4>
+      <div class="mobile-theme-chips" id="mobileThemeChips"></div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="section-padding">
+    <div class="container">
+      <!-- About Clinic Header -->
+      <div class="section-header">
+        <span class="sub-title">Our Heritage & Mission</span>
+        <h1 class="main-title">Modern Medicine In A Calming Light</h1>
+        <p class="description">
+          Founded on the principle that the healing environment matters as much as the medicine, AuraCare blends architectural tranquility with world-class clinical expertise.
+        </p>
+      </div>
+
+      <!-- Story Grid -->
+      <div class="grid-2" style="align-items: center; gap: 3.5rem; margin-bottom: 5rem;">
+        <div>
+          <span class="badge badge-primary" style="margin-bottom: 1rem;">The AuraCare Concept</span>
+          <h2 style="font-size: 2.2rem; margin-bottom: 1.25rem;">Reimagining the Clinical Journey</h2>
+          <p style="margin-bottom: 1.25rem; font-size: 1.05rem;">
+            AuraCare was envisioned as an antidote to cold, intimidating hospital corridors. Every square foot of our clinic incorporates biophilic daylight design, acoustic isolation, and soft pastel aesthetics to reduce patient cortisol levels before consultations even begin.
+          </p>
+          <p style="margin-bottom: 1.75rem; font-size: 0.95rem;">
+            Our medical staff pairs rigorous clinical science with unhurried dialogues, ensuring that each patient receives clear answers, actionable wellness plans, and genuine human warmth.
+          </p>
+
+          <div class="grid-2" style="gap: 1.25rem;">
+            <div style="background: var(--bg-surface); border: 1px solid var(--border-color); padding: 1.25rem; border-radius: var(--radius-md);">
+              <h3 style="font-size: 1.8rem; color: var(--primary); margin-bottom: 0.2rem;"><span class="counter-val" data-target="98.8" data-decimal="true">0</span>%</h3>
+              <p style="font-size: 0.85rem; font-weight: 600; margin: 0;">Diagnostic Accuracy</p>
+            </div>
+            <div style="background: var(--bg-surface); border: 1px solid var(--border-color); padding: 1.25rem; border-radius: var(--radius-md);">
+              <h3 style="font-size: 1.8rem; color: var(--secondary); margin-bottom: 0.2rem;"><span class="counter-val" data-target="15">0</span> Min</h3>
+              <p style="font-size: 0.85rem; font-weight: 600; margin: 0;">Average Check-in Time</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <img 
+            src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&q=80&w=800" 
+            alt="Modern clinic waiting lounge with greenery and warm light" 
+            style="border-radius: var(--radius-xl); box-shadow: var(--card-hover-shadow); width: 100%; height: 440px; object-fit: cover;"
+          >
+        </div>
+      </div>
+
+      <!-- Facility Gallery -->
+      <div style="margin-bottom: 5rem;">
+        <div class="section-header">
+          <span class="sub-title">Virtual Clinic Tour</span>
+          <h2 class="main-title">Inside AuraCare Facilities</h2>
+          <p class="description">Tour our purpose-built medical suites, recovery rooms, and patient lounges.</p>
+        </div>
+
+        <div class="grid-3">
+          <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--card-shadow);">
+            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=600" alt="Executive Lounge" style="height: 240px; width: 100%; object-fit: cover;">
+            <div style="padding: 1.25rem;">
+              <h4 style="font-size: 1.1rem; margin-bottom: 0.35rem;">Zen Waiting Lounge</h4>
+              <p style="font-size: 0.85rem; margin: 0;">Designed with acoustic baffling and soft seating to make pre-consultation moments serene.</p>
+            </div>
+          </div>
+
+          <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--card-shadow);">
+            <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=600" alt="Diagnostic Imaging Suite" style="height: 240px; width: 100%; object-fit: cover;">
+            <div style="padding: 1.25rem;">
+              <h4 style="font-size: 1.1rem; margin-bottom: 0.35rem;">Ultra-Quiet Imaging Suite</h4>
+              <p style="font-size: 0.85rem; margin: 0;">Equipped with low-decibel MRI and digital multi-slice scanners for patient peace of mind.</p>
+            </div>
+          </div>
+
+          <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--card-shadow);">
+            <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&q=80&w=600" alt="Consultation Room" style="height: 240px; width: 100%; object-fit: cover;">
+            <div style="padding: 1.25rem;">
+              <h4 style="font-size: 1.1rem; margin-bottom: 0.35rem;">Private Consultation Suites</h4>
+              <p style="font-size: 0.85rem; margin: 0;">Comfortable, non-clinical spaces for comprehensive doctor-patient wellness dialogues.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dedicated Spotlight: Pipiza Dev Studio -->
+      <div class="pipiza-spotlight" id="pipizaStudioSection">
+        <div style="position: relative; z-index: 2;">
+          <div style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 1.25rem;">
+            <span class="badge" style="background: rgba(56, 189, 248, 0.25); color: #38bdf8; font-size: 0.82rem;">
+              <i class="fa-solid fa-code"></i> CRAFTED BY PIPIZA DEV STUDIO
+            </span>
+            <span class="badge badge-demo">PORTFOLIO DEMONSTRATION</span>
+          </div>
+
+          <h2>Engineered by Pipiza Dev Studio</h2>
+          <p>
+            This website was conceptualized, designed, and constructed by <strong>Pipiza Dev Studio</strong> as a proof-of-concept for how modern healthcare clinics, private practices, and medical centers should look and perform online.
+          </p>
+
+          <div class="pipiza-features-grid">
+            <div class="pipiza-feature-card">
+              <i class="fa-solid fa-mobile-screen"></i>
+              <h4>100% Mobile & PC Responsive</h4>
+              <p>Engineered without layout glitches, text overflows, or cut-offs on every screen size from iPhone SE to 4K desktop.</p>
+            </div>
+
+            <div class="pipiza-feature-card">
+              <i class="fa-solid fa-swatchbook"></i>
+              <h4>Dynamic Light Themes</h4>
+              <p>5 bespoke light palettes with real-time CSS custom property switching and instant browser persistence.</p>
+            </div>
+
+            <div class="pipiza-feature-card">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+              <h4>Micro-Interactions & Animations</h4>
+              <p>Smooth transitions, floating cards, animated stat counters, and celebratory confetti upon simulated completions.</p>
+            </div>
+          </div>
+
+          <div style="background: rgba(255, 255, 255, 0.08); border-radius: var(--radius-lg); padding: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.15); margin-bottom: 2rem;">
+            <h4 style="color: #ffffff; font-size: 1.1rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-lightbulb" style="color: #f59e0b;"></i> Want a Custom Website for Your Practice or Business?</h4>
+            <p style="color: #cbd5e1; font-size: 0.92rem; margin: 0;">
+              Pipiza Dev Studio builds custom websites, SaaS interfaces, scheduling portals, and modern brands. Contact us to bring your vision to life.
+            </p>
+          </div>
+
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="https://pipoza.s.gy/pipoza.in" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background: linear-gradient(135deg, #38bdf8, #818cf8); color: #0f172a;">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Official Pipiza Studio (pipoza.in)
+            </a>
+            <a href="appointment.html" class="btn btn-outline" style="border-color: rgba(255,255,255,0.4); color: #ffffff;">
+              <i class="fa-solid fa-calendar-check"></i> Test Booking Flow
+            </a>
+            <a href="report.html" class="btn btn-outline" style="border-color: rgba(255,255,255,0.4); color: #ffffff;">
+              <i class="fa-solid fa-bug"></i> Test Bug Report
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Floating Demo Pill -->
+  <div class="floating-demo-pill trigger-demo-modal">
+    <div class="pulse-dot"></div>
+    <span>Pipiza Dev Demo</span>
+    <span class="badge badge-demo">SIMULATION</span>
+  </div>
+
+  <!-- Global Demo Modal -->
+  <div class="modal-overlay" id="demoModalOverlay">
+    <div class="modal-content">
+      <button type="button" class="modal-close-btn" id="closeDemoModal"><i class="fa-solid fa-xmark"></i></button>
+      <div style="text-align: center; margin-bottom: 1.5rem;">
+        <div style="width: 60px; height: 60px; border-radius: 50%; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 1rem;">
+          <i class="fa-solid fa-laptop-code"></i>
+        </div>
+        <h3 style="font-size: 1.45rem; margin-bottom: 0.35rem;">Pipiza Dev Studio Demo Notice</h3>
+        <span class="badge badge-demo">NON-OPERATIONAL SHOWCASE</span>
+      </div>
+      <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.25rem;">
+        This clinic website is a <strong>pure demonstration prototype</strong> designed and developed by <strong>Pipiza Dev Studio</strong>. 
+      </p>
+      <div class="simulation-notice-box" style="margin-bottom: 1.25rem;">
+        <h4><i class="fa-solid fa-triangle-exclamation"></i> What you should know:</h4>
+        <p>• All doctors, patient reviews, and clinic facilities shown are randomly generated for aesthetic demonstration.</p>
+        <p>• When you book an appointment, submit feedback, or file a bug report, no medical booking or data transmission occurs.</p>
+        <p>• Every action simulates success with animated confetti and redirects to an informative confirmation screen.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 0.65rem;">
+        <a href="https://pipoza.s.gy/pipoza.in" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block" style="background: linear-gradient(135deg, #38bdf8, #818cf8); color: #0f172a;">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Official Website (pipoza.in)
+        </a>
+        <button type="button" class="btn btn-outline btn-block" onclick="document.getElementById('closeDemoModal').click();">
+          Got It, Continue Exploring
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="margin-bottom: 1rem;">
+            <div class="brand-icon"><i class="fa-solid fa-staff-snake"></i></div>
+            <div class="brand-info">
+              <span class="brand-title">AuraCare <span class="badge badge-demo">DEMO</span></span>
+              <span class="brand-subtitle">Health & Wellness Clinic</span>
+            </div>
+          </a>
+          <p>Demonstrating premier web architecture, light visual design, and fluid medical user journeys.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Pages</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+            <li><a href="doctors.html"><i class="fa-solid fa-chevron-right"></i> Find Doctors</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right"></i> Medical Services</a></li>
+            <li><a href="reviews.html"><i class="fa-solid fa-chevron-right"></i> Patient Reviews</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Simulations</h4>
+          <ul class="footer-links">
+            <li><a href="appointment.html"><i class="fa-solid fa-chevron-right"></i> Book Appointment</a></li>
+            <li><a href="feedback.html"><i class="fa-solid fa-chevron-right"></i> Patient Feedback</a></li>
+            <li><a href="report.html"><i class="fa-solid fa-chevron-right"></i> Report a Bug</a></li>
+            <li><a href="success.html?type=demo"><i class="fa-solid fa-chevron-right"></i> Sample Success Page</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Simulated Newsletter</h4>
+          <p style="font-size: 0.88rem; margin-bottom: 1rem;">Get monthly health guidance directly from clinic staff.</p>
+          <form class="newsletter-form" style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <input type="email" placeholder="Enter your email" required class="form-control" style="font-size: 0.9rem;">
+            <button type="submit" class="btn btn-primary btn-sm"><i class="fa-regular fa-paper-plane"></i> Subscribe (Demo)</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 AuraCare Clinic. Built with precision by <a href="https://pipoza.s.gy/pipoza.in" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight:700;">Pipiza Dev Studio <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.75rem;"></i></a>.</div>
+        <div class="footer-demo-notice"><i class="fa-solid fa-shield-cat"></i> Demo template only.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
